@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchEmployees } from './store';
-import { Link } from 'react-router-dom';
+import { Link, Routes, Route } from 'react-router-dom';
+import Bio from './Bio';
 
 const App = ()=> {
   const { employees } = useSelector(state => state);
@@ -23,6 +24,9 @@ const App = ()=> {
           })
         }
       </ul>
+      <Routes>
+        <Route path='/employees/:id' element={ <Bio /> } />
+      </Routes>
     </div>
   );
 };
